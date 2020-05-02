@@ -10,3 +10,8 @@ variable "cluster_name" {
 variable "domain_name" {
   description = "Domain Name for the Load Balancer"
 }
+
+variable "key_name" {
+  description = "Name of key for SSH access to worker nodes"
+  default     = ""
+}
