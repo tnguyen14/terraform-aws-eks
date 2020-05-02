@@ -32,7 +32,7 @@ Install `aws-iam-authenticator` as per https://docs.aws.amazon.com/eks/latest/us
 Get kubeconfig:
 
 ```sh
-:; aws eks --region us-east-2 update-kubeconfig --name sonicledger --alias eks
+:; aws eks --region us-east-2 update-kubeconfig --name <cluster-name> --alias eks
 :; kubectl config use-context eks
 ```
 
