@@ -32,3 +32,17 @@ output "cluster_id" {
   description = "Cluster ID"
   value = module.eks.cluster_id
 }
+
+output "vpc_id" {
+  description = "VPC ID"
+  value = module.vpc.vpc_id
+}
+
+output "vpc_cidr_block" {
+  description = "CIDR block of the VPC"
+  value = module.vpc.vpc_cidr_block
+}
+
+output "vpc_private_subnets" {
+  value = module.vpc.private_subnets
+}
