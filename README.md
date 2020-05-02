@@ -4,6 +4,7 @@ Based on <https://github.com/hashicorp/learn-terraform-provision-eks-cluster/tre
 
 Application Architecture <https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/>
 
+## Features
 - VPC with public and private subnets
 - EKS cluster
 - ALB with a TLS certificate
