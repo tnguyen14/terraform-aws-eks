@@ -21,7 +21,7 @@ resource "aws_iam_instance_profile" "worker" {
   role = aws_iam_role.worker.name
 }
 
-resource "aws_iam_policy_attachment" "ssm_role_attach" {
-  role       = aws_iam_role.worker
+resource "aws_iam_role_policy_attachment" "ssm_role_attach" {
+  role       = aws_iam_role.worker.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
