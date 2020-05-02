@@ -15,7 +15,6 @@ module "eks" {
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
       target_group_arns             = [aws_lb_target_group.this.arn]
-      iam_instance_profile_name     = aws_iam_instance_profile.worker.name
     },
     {
       name                          = "worker-group-2"
@@ -24,7 +23,12 @@ module "eks" {
       asg_desired_capacity          = 1
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       target_group_arns             = [aws_lb_target_group.this.arn]
-      iam_instance_profile_name     = aws_iam_instance_profile.worker.name
     },
   ]
+}
+
+# Enable Systems Manager for workers
+resource "aws_iam_role_policy_attachment" "ssm_role_attach" {
+  role       = module.eks.worker_iam_role_name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
