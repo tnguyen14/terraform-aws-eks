@@ -1,8 +1,8 @@
 data "aws_iam_policy_document" "ec2_instance_profile" {
   statement {
-    actions = "sts:AssumeRole"
+    actions = ["sts:AssumeRole"]
 
-    pricipals {
+    principals {
       type        = "Service"
       identifiers = ["ec2.amazonaws.com"]
     }
@@ -18,5 +18,5 @@ resource "aws_iam_role" "worker" {
 
 resource "aws_iam_instance_profile" "worker" {
   name = "EKSWorker-${var.cluster_name}"
-  role = "${aws_iam_role.role.name}"
+  role = aws_iam_role.worker.name
 }
