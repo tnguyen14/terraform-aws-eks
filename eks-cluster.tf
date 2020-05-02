@@ -14,7 +14,6 @@ module "eks" {
       additional_userdata           = ""
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      target_group_arns             = [aws_lb_target_group.this.arn]
       key_name                      = var.key_name
     },
     {
@@ -23,7 +22,6 @@ module "eks" {
       additional_userdata           = ""
       asg_desired_capacity          = 1
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
-      target_group_arns             = [aws_lb_target_group.this.arn]
       key_name                      = var.key_name
     },
   ]

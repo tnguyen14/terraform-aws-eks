@@ -7,8 +7,6 @@ Application Architecture <https://aws.amazon.com/getting-started/hands-on/deploy
 ## Features
 - VPC with public and private subnets
 - EKS cluster
-- ALB with a TLS certificate
-- Custom instance profile for worker nodes
 - Systems Manager support for worker nodes in private subnet
 
 This module currently does not include a Route53 DNS record for domain.
